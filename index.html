@@ -120,9 +120,9 @@
     }
 
     .hero-name {
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.05;
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
       color: var(--text-light);
       opacity: 0;
       animation: fadeUp 0.7s ease 0.4s forwards;
@@ -977,11 +977,11 @@
             Escribime y charlamos sin compromiso.
           </p>
 
-          <a href="mailto:tuemail@gmail.com" class="contact-item d-block">
+          <a href="/cdn-cgi/l/email-protection#4d393828202c24210d2a202c2421632e2220" class="contact-item d-block">
             <i class="bi bi-envelope-fill"></i>
             <div>
               <div class="contact-item-label">Email</div>
-              <div class="contact-item-value">tuemail@gmail.com</div>
+              <div class="contact-item-value"><span class="__cf_email__" data-cfemail="e29697878f838b8ea2858f838b8ecc818d8f">[email&#160;protected]</span></div>
             </div>
           </a>
 
@@ -1060,7 +1060,7 @@
   </footer>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     // ─── Scroll animations ───
@@ -1102,14 +1102,4 @@
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 100) current = s.id;
-      });
-      document.querySelectorAll('.nav-link').forEach(link => {
-        link.style.color = link.getAttribute('href') === '#' + current
-          ? 'var(--neon)'
-          : '';
-      });
-    });
-  </script>
-</body>
-</html>
+        if (window.scrollY >= s.offsetTop - 100) current =
