@@ -121,6 +121,21 @@
     .highlight-title { font-size: 1.2rem; font-weight: 700; color: var(--text-light); margin-bottom: 0.9rem; }
     .highlight-text { color: var(--text); line-height: 1.7; font-size: 0.95rem; }
 
+    /* ─── BLOQUES CARRUSEL ─── */
+    .block-card { background: rgba(9,18,34,0.95); border: 1px solid rgba(0,255,231,0.12); border-radius: 26px; padding: 1.5rem; min-height: 470px; display: flex; flex-direction: column; justify-content: space-between; }
+    .block-slider { position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 26px; }
+    .block-image { width: 100%; height: 280px; object-fit: cover; border-radius: 24px; box-shadow: 0 18px 40px rgba(0,0,0,0.3); }
+    .block-slider[data-block="proyectos"] { background: white; }
+    .block-slider[data-block="proyectos"] .block-image { object-fit: contain; }
+    .block-control { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0,255,231,0.25); background: rgba(0,0,0,0.35); color: var(--neon); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s, background 0.2s; }
+    .block-control:hover { background: rgba(0,255,231,0.12); transform: translateY(-50%) scale(1.05); }
+    .block-control.left { left: 0.9rem; }
+    .block-control.right { right: 0.9rem; }
+    .block-title { font-size: 1.15rem; font-weight: 700; color: var(--text-light); margin-top: 1.4rem; margin-bottom: 0.8rem; }
+    .block-text { color: var(--text); line-height: 1.7; font-size: 0.95rem; }
+    @media (max-width: 992px) { .block-card { min-height: 420px; } .block-image { height: 240px; } }
+    @media (max-width: 768px) { .block-card { min-height: auto; } .block-slider { width: 100%; } .block-image { height: 220px; } }
+
     /* ─── PORTFOLIO ─── */
     #portfolio { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); }
     .filter-btn { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; background: transparent; border: 1px solid var(--border); color: var(--text); padding: 0.4rem 1rem; margin: 0.2rem; cursor: pointer; transition: all 0.2s; }
@@ -138,7 +153,7 @@
 
     /* ─── PROCESO ─── */
     #proceso { padding: 100px 0; background: var(--bg); border-top: 1px solid var(--border); }
-    .step-num { font-family: var(--font-mono); font-size: 3rem; color: rgba(0,255,231,0.12); font-weight: 700; line-height: 1; margin-bottom: 0.5rem; }
+    .step-num { font-family: var(--font-mono); font-size: 3rem; color: #ffffff; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; }
     .step-title { font-size: 1rem; font-weight: 700; color: var(--text-light); margin-bottom: 0.5rem; }
     .step-desc { font-size: 0.88rem; color: var(--text); line-height: 1.6; }
     .step-card { padding: 1.5rem; border-left: 2px solid var(--border); transition: border-color 0.3s; }
@@ -177,7 +192,7 @@
     .footer-socials a { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: rgba(0,255,231,0.06); border: 1px solid rgba(0,255,231,0.12); border-radius: 50%; color: var(--neon); text-decoration: none; transition: background 0.2s; }
     .footer-socials a:hover { background: rgba(0,255,231,0.12); }
     .footer-bottom { text-align: center; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-    .footer-bottom-links { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text); margin-bottom: 0.6rem; }
+    .footer-bottom-links { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text); margin-bottom: 0.6rem; white-space: normal; word-break: break-word; }
     .footer-bottom-links a { color: var(--text); text-decoration: none; transition: color 0.2s; }
     .footer-bottom-links a:hover { color: var(--neon); }
     .footer-stack { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-top: 1.2rem; }
@@ -189,7 +204,7 @@
     .footer-stack-icon svg circle,
     .footer-stack-icon svg ellipse { fill: currentColor; stroke: currentColor; }
     .footer-copyright { font-family: var(--font-mono); font-size: 0.75rem; color: rgba(200,216,232,0.4); }
-    @media (max-width: 768px) { .footer-top { grid-template-columns: 1fr; gap: 2rem; } }
+    @media (max-width: 992px) { .footer-top { grid-template-columns: 1fr; gap: 2rem; } .footer-logo-section, .footer-column { text-align: center; } .footer-links, .footer-contact { align-items: center; } .footer-contact-item { justify-content: center; flex-wrap: wrap; } .footer-bottom-links { text-align: center; } .footer-stack { justify-content: center; } }
 
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -220,6 +235,7 @@
         <ul class="navbar-nav gap-1">
           <li class="nav-item"><a class="nav-link" href="#sobre-mi">Quiénes somos</a></li>
           <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#en-accion">En acción</a></li>
           <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#proceso">Cómo trabajamos</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
@@ -376,6 +392,52 @@
             <div class="service-title">Gestión documental y digitalización</div>
             <p class="service-desc">Optimización de procesos administrativos mediante digitalización segura de documentos, organización de archivos y automatización de flujos de trabajo. Ideal para empresas que buscan eficiencia y trazabilidad.</p>
             <div class="mt-3"><span class="service-tag">Digitalización</span><span class="service-tag">Seguridad</span><span class="service-tag">Automatización</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EN ACCIÓN ─── -->
+  <section id="en-accion" class="highlight-section">
+    <div class="container">
+      <div class="text-center mb-5 fade-in">
+        <p class="section-label">// 03 — Servicios clave</p>
+        <h2 class="section-title">Soluciones digitales en accion</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="block-card">
+            <div class="block-slider" data-block="trabajo">
+              <button class="block-control left" type="button" aria-label="Anterior imagen">&lsaquo;</button>
+              <img class="block-image" src="Nuestro%20trabajo%20en%20accion/20260406_204629.jpg" alt="Nuestro trabajo en acción">
+              <button class="block-control right" type="button" aria-label="Siguiente imagen">&rsaquo;</button>
+            </div>
+            <h3 class="block-title">Nuestro trabajo en acción</h3>
+            <p class="block-text">Mantenimiento y resolución de fallas en equipos, junto con instalaciones de software, sistemas operativos y periféricos para una infraestructura estable.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="block-card">
+            <div class="block-slider" data-block="proyectos">
+              <button class="block-control left" type="button" aria-label="Anterior imagen">&lsaquo;</button>
+              <img class="block-image" src="Pantallas%20y%20Proyectos/2-login.png" alt="Pantallas y proyectos">
+              <button class="block-control right" type="button" aria-label="Siguiente imagen">&rsaquo;</button>
+            </div>
+            <h3 class="block-title">Pantallas y proyectos</h3>
+            <p class="block-text">Aplicaciones web y móviles, con interfaces modernas y funcionales que hacen mas agiles los procesos internos y la atencion al cliente.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="block-card">
+            <div class="block-slider" data-block="documental">
+              <button class="block-control left" type="button" aria-label="Anterior imagen">&lsaquo;</button>
+              <img class="block-image" src="Gestion%20Documental/01-escaneo.svg" alt="Gestión documental">
+              <button class="block-control right" type="button" aria-label="Siguiente imagen">&rsaquo;</button>
+            </div>
+            <h3 class="block-title">Transformando procesos</h3>
+            <p class="block-text">Digitalización segura de documentos, organizacion estructurada y automatizacion de flujos administrativos para mejorar eficiencia y trazabilidad.</p>
           </div>
         </div>
       </div>
@@ -623,6 +685,48 @@
       let current = '';
       sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
       document.querySelectorAll('.nav-link').forEach(link => { link.style.color = link.getAttribute('href') === '#' + current ? 'var(--neon)' : ''; });
+    });
+
+    const sliderData = {
+      trabajo: [
+        'Nuestro%20trabajo%20en%20accion/20260406_204629.jpg',
+        'Nuestro%20trabajo%20en%20accion/20260406_213806.jpg',
+        'Nuestro%20trabajo%20en%20accion/20260406_215613.jpg',
+        'Nuestro%20trabajo%20en%20accion/20260409_183951.jpg',
+        'Nuestro%20trabajo%20en%20accion/20260409_185904.jpg'
+      ],
+      proyectos: [
+        'Pantallas%20y%20Proyectos/2-login.png',
+        'Pantallas%20y%20Proyectos/13-Creando%20presupuesto.png',
+        'Pantallas%20y%20Proyectos/26-%20Agendar%20Reserva.png',
+        'Pantallas%20y%20Proyectos/7-Aceptacion%20Servicio.png'
+      ],
+      documental: [
+        'Gestion%20Documental/01-escaneo.svg',
+        'Gestion%20Documental/02-indexacion.svg'
+      ]
+    };
+
+    document.querySelectorAll('.block-slider').forEach(slider => {
+      const blockName = slider.dataset.block;
+      const imageEl = slider.querySelector('.block-image');
+      const prev = slider.querySelector('.block-control.left');
+      const next = slider.querySelector('.block-control.right');
+      let index = 0;
+
+      const updateImage = () => {
+        imageEl.src = sliderData[blockName][index];
+      };
+
+      prev.addEventListener('click', () => {
+        index = (index - 1 + sliderData[blockName].length) % sliderData[blockName].length;
+        updateImage();
+      });
+
+      next.addEventListener('click', () => {
+        index = (index + 1) % sliderData[blockName].length;
+        updateImage();
+      });
     });
   </script>
 </body>
