@@ -166,7 +166,7 @@
     .contact-item i { font-size: 1.4rem; color: var(--neon); min-width: 30px; }
     .contact-item-label { font-size: 0.75rem; font-family: var(--font-mono); color: var(--text); text-transform: uppercase; letter-spacing: 0.1em; }
     .contact-item-value { font-size: 0.95rem; color: var(--text-light); font-weight: 600; }
-    .contact-form-wrap { background: var(--card-bg); border: 1px solid var(--border); padding: 2.5rem; }
+    .contact-form-wrap { background: var(--card-bg); border: 1px solid var(--border); padding: 2.5rem; max-width: 920px; width: 100%; margin: 0 auto; }
     .form-label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); margin-bottom: 0.4rem; }
     .form-control { background: var(--bg); border: 1px solid var(--border); color: var(--text-light); border-radius: 0; font-family: var(--font-mono); font-size: 0.9rem; padding: 0.7rem 1rem; }
     .form-control:focus { background: var(--bg); border-color: var(--neon); color: var(--text-light); box-shadow: 0 0 0 2px rgba(0,255,231,0.1); }
@@ -176,8 +176,8 @@
     footer { background: var(--bg); border-top: 1px solid var(--border); padding: 3.5rem 0 2rem; }
     .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
     .footer-column h3 { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); margin-bottom: 1.2rem; }
-    .footer-logo-section { text-align: left; }
-    .footer-logo-section img { height: 80px; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(0,255,231,0.2)); }
+    .footer-logo-section { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .footer-logo-section img { height: 140px; width: auto; margin-bottom: 1rem; filter: drop-shadow(0 0 12px rgba(0,255,231,0.25)); }
     .footer-logo-text { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text); margin-bottom: 0.8rem; }
     .footer-tagline { font-family: var(--font-display); font-size: 0.95rem; color: var(--neon); font-weight: 600; }
     .footer-links { display: flex; flex-direction: column; gap: 0.8rem; text-align: left; }
@@ -191,20 +191,27 @@
     .footer-socials { display: flex; gap: 0.6rem; margin-top: 0.4rem; }
     .footer-socials a { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: rgba(0,255,231,0.06); border: 1px solid rgba(0,255,231,0.12); border-radius: 50%; color: var(--neon); text-decoration: none; transition: background 0.2s; }
     .footer-socials a:hover { background: rgba(0,255,231,0.12); }
-    .footer-bottom { text-align: center; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-    .footer-bottom-links { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text); margin-bottom: 0.6rem; white-space: normal; word-break: break-word; }
+    .footer-bottom { text-align: center; padding: 1.8rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-top: 1.5rem; }
+    .footer-bottom-links { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text); margin: 0; white-space: normal; word-break: break-word; }
     .footer-bottom-links a { color: var(--text); text-decoration: none; transition: color 0.2s; }
     .footer-bottom-links a:hover { color: var(--neon); }
     .footer-stack { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-top: 1.2rem; }
     .footer-stack-item { display: inline-flex; align-items: center; gap: 0.45rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text); background: rgba(0,255,231,0.06); border: 1px solid rgba(0,255,231,0.12); border-radius: 999px; padding: 0.55rem 0.9rem; }
     .footer-stack-item i,
-    .footer-stack-icon { width: 1rem; height: 1rem; color: var(--neon); display: inline-flex; align-items: center; justify-content: center; }
+    .footer-stack-icon { width: 1rem; height: 1rem; display: inline-flex; align-items: center; justify-content: center; }
     .footer-stack-icon svg { width: 1rem; height: 1rem; display: block; }
     .footer-stack-icon svg path,
     .footer-stack-icon svg circle,
     .footer-stack-icon svg ellipse { fill: currentColor; stroke: currentColor; }
+    .footer-stack-windows i { color: #00adef; }
+    .footer-stack-react .footer-stack-icon { color: #61dafb; }
+    .footer-stack-android i { color: #3ddc84; }
+    .footer-stack-postgres i { color: #316192; }
+    .footer-stack-aws i { color: #ff9900; }
+    .footer-stack-node i { color: #8cc84b; }
     .footer-copyright { font-family: var(--font-mono); font-size: 0.75rem; color: rgba(200,216,232,0.4); }
     @media (max-width: 992px) { .footer-top { grid-template-columns: 1fr; gap: 2rem; } .footer-logo-section, .footer-column { text-align: center; } .footer-links, .footer-contact { align-items: center; } .footer-contact-item { justify-content: center; flex-wrap: wrap; } .footer-bottom-links { text-align: center; } .footer-stack { justify-content: center; } }
+    @media (max-width: 768px) { .footer-logo-section img { height: 110px; } .footer-stack { gap: 0.5rem; } }
 
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -542,27 +549,8 @@
         <h2 class="section-title">Contacto</h2>
         <div class="section-divider mx-auto"></div>
       </div>
-      <div class="row g-5">
-        <div class="col-lg-5 fade-in">
-          <p class="mb-4" style="color:var(--text);line-height:1.8;">Tenés un equipo roto, querés mejorar tu PC o necesitás una app para tu negocio. Escribinos y charlamos sin compromiso.</p>
-          <div class="contact-item d-block" id="contact-email" style="cursor: pointer;">
-            <i class="bi bi-envelope-fill"></i>
-            <div><div class="contact-item-label">Email</div><div class="contact-item-value">confianzamano@gmail.com</div></div>
-          </div>
-          <a href="https://wa.me/5491121917954" target="_blank" class="contact-item d-block">
-            <i class="bi bi-whatsapp"></i>
-            <div><div class="contact-item-label">WhatsApp</div><div class="contact-item-value">+54 9 11 2191-7954</div></div>
-          </a>
-          <a href="#" class="contact-item d-block">
-            <i class="bi bi-geo-alt-fill"></i>
-            <div><div class="contact-item-label">Zona de atención</div><div class="contact-item-value">Buenos Aires, Argentina</div></div>
-          </a>
-          <a href="https://linkedin.com/in/mariano-javier-cereto-3390985a" target="_blank" class="contact-item d-block">
-            <i class="bi bi-linkedin"></i>
-            <div><div class="contact-item-label">LinkedIn</div><div class="contact-item-value">linkedin.com/in/mariano-javier-cereto-3390985a</div></div>
-          </a>
-        </div>
-        <div class="col-lg-7 fade-in">
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-9 col-12 fade-in">
           <div class="contact-form-wrap">
             <form action="https://formspree.io/f/mlgarawp" method="POST" class="row g-3">
               <div class="col-sm-6"><label class="form-label">Nombre</label><input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required/></div>
@@ -637,12 +625,12 @@
 
       <!-- Technology Stack -->
       <div class="footer-stack">
-        <span class="footer-stack-item"><i class="bi bi-windows"></i>Windows</span>
-        <span class="footer-stack-item"><svg class="footer-stack-icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><circle cx="128" cy="128" r="24" fill="currentColor"/><ellipse cx="128" cy="128" rx="88" ry="40" fill="none" stroke="currentColor" stroke-width="18"/><ellipse cx="128" cy="128" rx="40" ry="88" fill="none" stroke="currentColor" stroke-width="18" transform="rotate(60 128 128)"/><ellipse cx="128" cy="128" rx="40" ry="88" fill="none" stroke="currentColor" stroke-width="18" transform="rotate(-60 128 128)"/></svg>React Native</span>
-        <span class="footer-stack-item"><i class="bi bi-phone-fill"></i>Android</span>
-        <span class="footer-stack-item"><i class="bi bi-database"></i>PostgreSQL</span>
-        <span class="footer-stack-item"><i class="bi bi-cloud"></i>AWS</span>
-        <span class="footer-stack-item"><i class="bi bi-server"></i>Node.js</span>
+        <span class="footer-stack-item footer-stack-windows"><i class="bi bi-windows"></i>Windows</span>
+        <span class="footer-stack-item footer-stack-react"><svg class="footer-stack-icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><circle cx="128" cy="128" r="24" fill="currentColor"/><ellipse cx="128" cy="128" rx="88" ry="40" fill="none" stroke="currentColor" stroke-width="18"/><ellipse cx="128" cy="128" rx="40" ry="88" fill="none" stroke="currentColor" stroke-width="18" transform="rotate(60 128 128)"/><ellipse cx="128" cy="128" rx="40" ry="88" fill="none" stroke="currentColor" stroke-width="18" transform="rotate(-60 128 128)"/></svg>React Native</span>
+        <span class="footer-stack-item footer-stack-android"><i class="bi bi-phone-fill"></i>Android</span>
+        <span class="footer-stack-item footer-stack-postgres"><i class="bi bi-database"></i>PostgreSQL</span>
+        <span class="footer-stack-item footer-stack-aws"><i class="bi bi-cloud"></i>AWS</span>
+        <span class="footer-stack-item footer-stack-node"><i class="bi bi-server"></i>Node.js</span>
       </div>
     </div>
   </footer>
