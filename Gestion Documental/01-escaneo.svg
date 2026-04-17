@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="560" viewBox="0 0 840 560">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1626"/>
+      <stop offset="100%" stop-color="#112339"/>
+    </linearGradient>
+  </defs>
+  <rect width="840" height="560" rx="32" fill="url(#bg)"/>
+  <rect x="100" y="120" width="640" height="320" rx="28" fill="#0e1b34" stroke="#00ffe7" stroke-opacity="0.18" stroke-width="4"/>
+  <rect x="160" y="170" width="520" height="60" rx="16" fill="#111f3e"/>
+  <rect x="160" y="250" width="520" height="140" rx="16" fill="#0a162f"/>
+  <rect x="180" y="285" width="420" height="28" rx="14" fill="#00ffe7" opacity="0.22"/>
+  <rect x="180" y="330" width="360" height="24" rx="12" fill="#00ffe7" opacity="0.14"/>
+  <rect x="180" y="370" width="300" height="24" rx="12" fill="#00ffe7" opacity="0.14"/>
+  <rect x="280" y="190" width="280" height="24" rx="12" fill="#00ffe7" opacity="0.18"/>
+  <path d="M190 200 h460 v110 h-460 z" fill="none" stroke="#00ffe7" stroke-width="4" stroke-dasharray="18 12" opacity="0.9"/>
+  <path d="M240 160 h120 v-40 h-120 z" fill="#00ffe7" opacity="0.25"/>
+  <text x="420" y="110" text-anchor="middle" fill="#00ffe7" font-family="Inter, sans-serif" font-size="30" font-weight="700">Escaneo de documentos</text>
+</svg>
