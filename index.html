@@ -122,19 +122,25 @@
     .highlight-text { color: var(--text); line-height: 1.7; font-size: 0.95rem; }
 
     /* ─── BLOQUES CARRUSEL ─── */
-    .block-card { background: rgba(9,18,34,0.95); border: 1px solid rgba(0,255,231,0.12); border-radius: 26px; padding: 1.5rem; min-height: 470px; display: flex; flex-direction: column; justify-content: space-between; }
-    .block-slider { position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 26px; }
-    .block-image { width: 100%; height: 280px; object-fit: cover; border-radius: 24px; box-shadow: 0 18px 40px rgba(0,0,0,0.3); }
-    .block-slider[data-block="proyectos"] { background: white; }
-    .block-slider[data-block="proyectos"] .block-image { object-fit: contain; }
+    .block-card { background: rgba(9,18,34,0.95); border: 1px solid rgba(0,255,231,0.12); border-radius: 26px; padding: 0; aspect-ratio: 16 / 9; display: flex; flex-direction: column; overflow: hidden; }
+    .block-slider { position: relative; display: flex; align-items: stretch; justify-content: stretch; overflow: hidden; border-radius: 26px; flex: 1; width: 100%; height: 100%; }
+    .block-image { width: 100%; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; flex: 1; }
+    .block-slider[data-block="proyectos"] { background: var(--bg); }
+    .block-slider[data-block="proyectos"] .block-image { object-fit: cover; }
+    video { font-size: 0.9rem; }
+    video::-webkit-media-controls { background-color: rgba(0,0,0,0.5); }
+    video::-webkit-media-controls-panel { background-color: rgba(0,0,0,0.6); height: 28px; }
+    video::-webkit-media-controls-play-button { width: 24px; height: 24px; }
+    video::-webkit-media-controls-current-time-display { font-size: 0.8rem; }
+    video::-webkit-media-controls-time-remaining-display { font-size: 0.8rem; }
     .block-control { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0,255,231,0.25); background: rgba(0,0,0,0.35); color: var(--neon); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s, background 0.2s; }
     .block-control:hover { background: rgba(0,255,231,0.12); transform: translateY(-50%) scale(1.05); }
     .block-control.left { left: 0.9rem; }
     .block-control.right { right: 0.9rem; }
     .block-title { font-size: 1.15rem; font-weight: 700; color: var(--text-light); margin-top: 1.4rem; margin-bottom: 0.8rem; }
     .block-text { color: var(--text); line-height: 1.7; font-size: 0.95rem; }
-    @media (max-width: 992px) { .block-card { min-height: 420px; } .block-image { height: 240px; } }
-    @media (max-width: 768px) { .block-card { min-height: auto; } .block-slider { width: 100%; } .block-image { height: 220px; } }
+    @media (max-width: 992px) { .block-card { aspect-ratio: 16 / 9; } .block-image { height: 100%; } }
+    @media (max-width: 768px) { .block-card { aspect-ratio: 16 / 9; } .block-slider { width: 100%; } .block-image { height: 100%; } }
 
     /* ─── PORTFOLIO ─── */
     #portfolio { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); }
@@ -417,34 +423,28 @@
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="block-card">
             <div class="block-slider" data-block="trabajo">
-              <button class="block-control left" type="button" aria-label="Anterior imagen">&lsaquo;</button>
-              <img class="block-image" src="Nuestro%20trabajo%20en%20accion/20260406_204629.jpg" alt="Nuestro trabajo en acción">
-              <button class="block-control right" type="button" aria-label="Siguiente imagen">&rsaquo;</button>
+              <video class="block-image" controls autoplay muted loop style="width: 100%; height: 100%; border-radius: 0; display: block;">
+                <source src="Nuestro%20trabajo%20en%20accion/Mantenimiento%20y%20Reparaciones.mp4" type="video/mp4">
+              </video>
             </div>
-            <h3 class="block-title">Nuestro trabajo en acción</h3>
-            <p class="block-text">Mantenimiento y resolución de fallas en equipos, junto con instalaciones de software, sistemas operativos y periféricos para una infraestructura estable.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="block-card">
             <div class="block-slider" data-block="proyectos">
-              <button class="block-control left" type="button" aria-label="Anterior imagen">&lsaquo;</button>
-              <img class="block-image" src="Pantallas%20y%20Proyectos/2-login.png" alt="Pantallas y proyectos">
-              <button class="block-control right" type="button" aria-label="Siguiente imagen">&rsaquo;</button>
+              <video class="block-image" controls autoplay muted loop style="width: 100%; height: 100%; border-radius: 0; display: block; margin: 0; padding: 0;">
+                <source src="Pantallas%20y%20Proyectos/Desarrollo.mp4" type="video/mp4">
+              </video>
             </div>
-            <h3 class="block-title">Pantallas y proyectos</h3>
-            <p class="block-text">Aplicaciones web y móviles, con interfaces modernas y funcionales que hacen mas agiles los procesos internos y la atencion al cliente.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="block-card">
             <div class="block-slider" data-block="documental">
-              <button class="block-control left" type="button" aria-label="Anterior imagen">&lsaquo;</button>
-              <img class="block-image" src="Gestion%20Documental/01-escaneo.svg" alt="Gestión documental">
-              <button class="block-control right" type="button" aria-label="Siguiente imagen">&rsaquo;</button>
+              <video class="block-image" controls autoplay muted loop style="width: 100%; height: 100%; border-radius: 0; display: block;">
+                <source src="Gestion%20Documental/Transformacion%20Digital.mp4" type="video/mp4">
+              </video>
             </div>
-            <h3 class="block-title">Transformando procesos</h3>
-            <p class="block-text">Digitalización segura de documentos, organizacion estructurada y automatizacion de flujos administrativos para mejorar eficiencia y trazabilidad.</p>
           </div>
         </div>
       </div>
