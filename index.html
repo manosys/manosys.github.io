@@ -42,18 +42,55 @@
     .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,255,231,0.8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
     /* ─── HERO ─── */
-    #inicio { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;
+    #inicio { 
+      min-height: 100vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      position: relative; 
+      overflow: hidden;
       background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,255,231,0.05) 0%, transparent 70%),
                   radial-gradient(ellipse 50% 50% at 20% 80%, rgba(123,94,167,0.08) 0%, transparent 60%),
-                  var(--bg); }
-    #inicio::after { content: ''; position: absolute; inset: 0;
+                  var(--bg); 
+    }
+    .hero-video { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      z-index: 1; 
+    }
+    #inicio::before { 
+      content: ''; 
+      position: absolute; 
+      inset: 0; 
+      background-color: rgba(0, 0, 0, 0.75); 
+      z-index: 2; 
+      pointer-events: none; 
+    }
+    #inicio::after { 
+      content: ''; 
+      position: absolute; 
+      inset: 0;
       background-image: linear-gradient(rgba(0,255,231,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,231,0.03) 1px, transparent 1px);
-      background-size: 60px 60px; pointer-events: none; }
+      background-size: 60px 60px; 
+      pointer-events: none; 
+      z-index: 3; 
+    }
+    #inicio > .container { 
+      position: relative; 
+      z-index: 4; 
+      width: 100%; 
+      max-width: 1200px; 
+    }
 
     .hero-eyebrow { font-family: var(--font-mono); color: var(--neon); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.2rem; opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards; }
     .hero-name { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.02; color: var(--text-light); opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards; }
     .hero-name .highlight { color: var(--neon); text-shadow: 0 0 30px rgba(0,255,231,0.4); }
-    .hero-tagline { font-family: var(--font-display); font-size: clamp(0.95rem, 2vw, 1.1rem); color: var(--text); margin-top: 1.2rem; opacity: 0; animation: fadeUp 0.7s ease 0.6s forwards; }
+    .hero-tagline { font-family: var(--font-mono); font-size: clamp(0.95rem, 2vw, 1.1rem); color: var(--neon); margin-top: 1.2rem; opacity: 0; animation: fadeUp 0.7s ease 0.6s forwards; }
+    .typing { display: inline-block; overflow: hidden; border-right: 2px solid var(--neon); white-space: nowrap; animation: typing 3.5s steps(38, end) 0.7s forwards, blink-caret 0.75s step-end infinite 0.7s; }
     .hero-desc { font-size: 1rem; color: var(--text); line-height: 1.7; max-width: 520px; margin-top: 1.5rem; opacity: 0; animation: fadeUp 0.7s ease 0.8s forwards; }
     .hero-ctas { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s ease 1s forwards; }
     .btn-neon { background: transparent; border: 1.5px solid var(--neon); color: var(--neon); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.1em; padding: 0.7rem 1.8rem; text-transform: uppercase; transition: background 0.25s, box-shadow 0.25s; text-decoration: none; display: inline-block; }
@@ -86,10 +123,19 @@
     #sobre-mi { background: var(--bg2); padding: 100px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .sobre-text { font-size: 1rem; line-height: 1.8; color: var(--text); }
     .feature-list { display: grid; gap: 0.9rem; margin-top: 1rem; }
-    .feature-item { font-family: var(--font-display); color: var(--text-light); background: rgba(0,255,231,0.05); border: 1px solid rgba(0,255,231,0.12); border-radius: 16px; padding: 1rem 1.1rem; }
-    .feature-item strong { color: var(--neon); display: block; margin-bottom: 0.35rem; font-size: 0.95rem; }
-    .feature-item::before { content: '•'; color: var(--neon); margin-right: 0.65rem; }
-    .feature-item { display: flex; gap: 0.5rem; align-items: baseline; }
+    .feature-item { 
+      font-family: var(--font-display); 
+      color: var(--text-light); 
+      background: rgba(0,255,231,0.05); 
+      border: 1px solid rgba(0,255,231,0.12); 
+      border-radius: 16px; 
+      padding: 1rem 1.1rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .feature-item strong { color: var(--neon); font-size: 0.95rem; }
+    .feature-item::before { content: '•'; color: var(--neon); margin-right: 0; flex-shrink: 0; }
     .feature-item span { display: block; }
     .stat-box { background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; text-align: center; transition: border-color 0.3s, box-shadow 0.3s; }
     .stat-box:hover { border-color: var(--neon); box-shadow: 0 0 20px rgba(0,255,231,0.1); }
@@ -166,7 +212,15 @@
     .step-card:hover { border-color: var(--neon); }
 
     /* ─── CONTACTO ─── */
-    #contacto { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--border); }
+    #contacto { 
+      padding: 100px 0; 
+      background-color: #0d1b2a;
+      background-image: radial-gradient(#00e5cc 1px, transparent 1px);
+      background-size: 30px 30px;
+      background-position: 0 0;
+      position: relative;
+      border-top: 1px solid var(--border); 
+    }
     .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1.2rem; background: var(--card-bg); border: 1px solid var(--border); margin-bottom: 1rem; text-decoration: none; transition: border-color 0.25s, background 0.25s; }
     .contact-item:hover { border-color: var(--neon); background: rgba(0,255,231,0.04); }
     .contact-item i { font-size: 1.4rem; color: var(--neon); min-width: 30px; }
@@ -221,12 +275,67 @@
 
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes typing { from { width: 0; } to { width: 38ch; } }
+    @keyframes blink-caret { from, to { border-right-color: var(--neon); } 50% { border-right-color: transparent; } }
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: rgba(0,255,231,0.3); border-radius: 3px; }
     @media (max-width: 768px) { .hero-logo-wrap img { max-width: 320px; } .contact-form-wrap { padding: 1.5rem; } }
+
+    /* ─── WHATSAPP BUTTON ─── */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+      z-index: 999;
+      animation: whatsapp-pulse 2s infinite;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1fb55d;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+      transform: scale(1.1);
+      animation: none;
+    }
+    .whatsapp-btn svg {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+    }
+    @keyframes whatsapp-pulse {
+      0% {
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      }
+      50% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+      }
+      100% {
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      }
+    }
+    @media (max-width: 768px) {
+      .whatsapp-btn {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+      }
+      .whatsapp-btn svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -259,6 +368,9 @@
 
   <!-- ─── HERO ─── -->
   <section id="inicio">
+    <video class="hero-video" autoplay muted loop>
+      <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+    </video>
     <div class="container py-5">
       <div class="row align-items-center gy-5">
         <div class="col-lg-7">
@@ -267,7 +379,7 @@
             ManoSys<br/>
             Tu mundo digital, en buenas manos
           </h1>
-          <p class="hero-tagline">&gt; Desarrollo · Soporte · Reparacion</p>
+          <p class="hero-tagline typing">&gt; Desarrollo · Soporte · Reparacion</p>
           <p class="hero-desc">
             Reparamos y optimizamos notebooks y computadoras, instalamos sistemas
             y desarrollamos aplicaciones web y móviles a medida. Atención personalizada,
@@ -361,7 +473,7 @@
       <div class="row g-4">
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="service-card">
-            <div class="service-icon"><i class="bi bi-tools"></i></div>
+            <div class="service-icon"><img src="Servicios/reparacion-notebooks.png" alt="Reparación de notebooks y PCs"/></div>
             <div class="service-title">Reparación de notebooks y PCs</div>
             <p class="service-desc">Diagnóstico y reparación de fallas de hardware y software. Cambio de pantallas, teclados, discos, memorias y coolers. Mantenimiento preventivo y optimización de equipos para prolongar su vida útil.</p>
             <div class="mt-3"><span class="service-tag">Hardware</span><span class="service-tag">Diagnóstico</span></div>
@@ -369,7 +481,7 @@
         </div>
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="service-card">
-            <div class="service-icon"><i class="bi bi-pc-display"></i></div>
+            <div class="service-icon"><img src="Servicios/instalacion-sistemas.png" alt="Instalación y optimización de sistemas"/></div>
             <div class="service-title">Instalación y optimización de sistemas</div>
             <p class="service-desc">Instalación de Windows y drivers,Optimización de rendimiento, limpieza de virus y configuración de periféricos. “Tu PC funcionando como nueva, con soporte técnico confiable y rápido.”</p>
             <div class="mt-3"><span class="service-tag">Windows</span></div>
@@ -377,7 +489,7 @@
         </div>
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="service-card">
-            <div class="service-icon"><i class="bi bi-window-stack"></i></div>
+            <div class="service-icon"><img src="Servicios/desarrollo-web.png" alt="Desarrollo de aplicaciones web"/></div>
             <div class="service-title">Desarrollo de aplicaciones web</div>
             <p class="service-desc">Sitios y aplicaciones web a medida para negocios, emprendimientos y startups. Diseño responsivo, moderno y fácil de administrar.</p>
             <div class="mt-3"><span class="service-tag">React</span><span class="service-tag">Node.js</span><span class="service-tag">PostgreSQL </span></div>
@@ -385,7 +497,7 @@
         </div>
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="service-card">
-            <div class="service-icon"><i class="bi bi-phone"></i></div>
+            <div class="service-icon"><img src="Servicios/desarrollo-mobile.png" alt="Desarrollo de aplicaciones móviles"/></div>
             <div class="service-title">Desarrollo de aplicaciones móviles</div>
             <p class="service-desc">Creamos apps para Android e iOS con tecnologías híbridas modernas como React Native, asegurando rendimiento y compatibilidad. Acompañamos todo el proceso: desde el diseño y la experiencia de usuario hasta la publicación en las tiendas oficiales.</p>
             <div class="mt-3"><span class="service-tag">Android</span><span class="service-tag">iOS</span><span class="service-tag">React Native</span></div>
@@ -393,7 +505,7 @@
         </div>
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="service-card">
-            <div class="service-icon"><i class="bi bi-headset"></i></div>
+            <div class="service-icon"><img src="Servicios/soporte-remoto.png" alt="Soporte técnico remoto"/></div>
             <div class="service-title">Soporte técnico remoto</div>
             <p class="service-desc">Resolución de problemas de forma remota sin que tengas que moverte de tu casa u oficina. Rápido, efectivo y sin complicaciones.</p>
             <div class="mt-3"><span class="service-tag">Remoto</span><span class="service-tag">Multiplataforma </span><span class="service-tag">Seguridad</span></div>
@@ -401,7 +513,7 @@
         </div>
         <div class="col-md-6 col-lg-4 fade-in">
           <div class="service-card">
-            <div class="service-icon"><i class="bi bi-file-earmark-text"></i></div>
+            <div class="service-icon"><img src="Servicios/gestion-documental.png" alt="Gestión documental y digitalización"/></div>
             <div class="service-title">Gestión documental y digitalización</div>
             <p class="service-desc">Optimización de procesos administrativos mediante digitalización segura de documentos, organización de archivos y automatización de flujos de trabajo. Ideal para empresas que buscan eficiencia y trazabilidad.</p>
             <div class="mt-3"><span class="service-tag">Digitalización</span><span class="service-tag">Seguridad</span><span class="service-tag">Automatización</span></div>
@@ -717,5 +829,12 @@
       });
     });
   </script>
+
+  <!-- ─── WHATSAPP BUTTON ─── -->
+  <a href="https://wa.me/5491121917954" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" title="Contactanos por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.2.65 4.25 1.77 6.09l-1.45 5.35 5.56-1.79C7.61 23.13 9.71 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm5.98 16.55c-.26.73-1.21 1.34-2.04 1.51-.59.11-1.36.2-3.95-.85-3.27-1.32-5.36-4.77-5.53-4.99-.16-.23-1.34-1.78-1.34-3.39 0-1.61.85-2.4 1.15-2.72.25-.26.57-.33.75-.33.19 0 .37 0 .54.01.17.01.4-.06.63.48.23.55 .79 1.92.86 2.06.07.14.11.31.02.49-.08.18-.15.27-.29.43-.15.15-.31.35-.44.47-.14.13-.29.27-.12.52.17.26.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.35 1.44.18.09.4.08.55-.05.16-.12.51-.6.65-.81.13-.2.26-.17.42-.1.16.07 1.02.48 1.2.57.17.09.28.14.32.22.04.09.04.5-.22 1.23z"/>
+    </svg>
+  </a>
 </body>
 </html>
