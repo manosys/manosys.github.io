@@ -142,6 +142,16 @@
     .stat-num { font-family: var(--font-mono); font-size: 2.2rem; color: var(--neon); font-weight: 700; }
     .stat-label { font-size: 0.8rem; color: var(--text); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.3rem; }
 
+    @media (max-width: 768px) {
+      #sobre-mi .row { justify-content: center; }
+      #sobre-mi .col-lg-6 { flex: 0 0 100%; max-width: 100%; }
+      #sobre-mi .row.g-3 { justify-content: center; }
+      #sobre-mi .row.g-3 .col-6 { flex: 0 0 100%; max-width: 100%; }
+      #sobre-mi .row.g-3 .stat-box { width: 100%; max-width: 420px; margin: 0 auto; }
+      #sobre-mi .feature-list { width: min(100%, 420px); margin: 1rem auto 0; }
+      #sobre-mi .feature-item span { white-space: normal; }
+    }
+
     /* ─── SERVICIOS ─── */
     #servicios { padding: 100px 0; background: var(--bg); }
     .service-card { background: var(--card-bg); border: 1px solid var(--border); padding: 2rem; height: 100%; position: relative; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; overflow: hidden; }
