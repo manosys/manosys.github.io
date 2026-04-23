@@ -136,7 +136,7 @@
     }
     .feature-item strong { color: var(--neon); font-size: 0.95rem; }
     .feature-item::before { content: '•'; color: var(--neon); margin-right: 0; flex-shrink: 0; }
-    .feature-item span { display: block; }
+    .feature-item span { display: block; white-space: nowrap; font-size: 0.9rem; }
     .stat-box { background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; text-align: center; transition: border-color 0.3s, box-shadow 0.3s; }
     .stat-box:hover { border-color: var(--neon); box-shadow: 0 0 20px rgba(0,255,231,0.1); }
     .stat-num { font-family: var(--font-mono); font-size: 2.2rem; color: var(--neon); font-weight: 700; }
@@ -308,7 +308,7 @@
       box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
       transition: all 0.3s ease;
       z-index: 999;
-      animation: whatsapp-pulse 2s infinite;
+      animation: whatsapp-pulse 1.5s ease-in-out infinite;
     }
     .whatsapp-btn:hover {
       background-color: #1fb55d;
@@ -322,14 +322,11 @@
       filter: brightness(0) invert(1);
     }
     @keyframes whatsapp-pulse {
-      0% {
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      0%, 100% {
+        transform: translateY(0);
       }
       50% {
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-      }
-      100% {
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        transform: translateY(-12px);
       }
     }
     @media (max-width: 768px) {
@@ -461,9 +458,9 @@
             <div class="col-6"><div class="stat-box"><div class="stat-num">100%</div><div class="stat-label">Compromiso con el Cliente</div></div></div>
           </div>
           <div class="feature-list mt-4">
-            <div class="feature-item"><strong>Experiencia:</strong> “Gestión de procesos y proyectos tecnológicos en Gobierno y empresas”</div>
-            <div class="feature-item"><strong>Servicios:</strong> “Desarrollo de apps, optimización de sistemas y soporte integral.”</div>
-            <div class="feature-item"><strong>Visión:</strong> “Innovación modular y soluciones digitales confiables para tu crecimiento.”</div>
+            <div class="feature-item"><strong>Experiencia:</strong> <span>“Gestión de procesos y proyectos tecnológicos en Gobierno y empresas”</span></div>
+            <div class="feature-item"><strong>Servicios:</strong> <span>“Desarrollo de apps, optimización de sistemas y soporte integral”</span></div>
+            <div class="feature-item"><strong>Visión:</strong> <span>“Innovación modular y soluciones digitales confiables para tu crecimiento”</span></div>
           </div>
         </div>
       </div>
